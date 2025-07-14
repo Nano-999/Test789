@@ -12,14 +12,11 @@ const newsIntervals = new Map(); // JID එකට interval ට්‍රැක්
 // Start Derana News Command
 cmd({
     pattern: "startnews",
-    alias: ["breckingnews"],
-    react: "📑",
-    desc: "අලුත් Derana පුවත් ආපු විගස යවයි, එකම පුවත ආයෙ එන්නේ නැත.",
-    use: ".startderana <jid>",
-    category: "පුවත්",
+    desc: "Check bot's response time.",
+    category: "main",
+    react: "🪄",
     filename: __filename
-},
-async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
+}, async (conn, mek, m, { from, quoted, reply }) => {
     try {
         if (!isOwner) return reply("*`මෙම විධානය හිමිකරුට පමණයි`*");
 
